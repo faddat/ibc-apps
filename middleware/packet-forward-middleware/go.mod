@@ -18,6 +18,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
 	github.com/iancoleman/orderedmap v0.2.0
+	github.com/notional-labs/composable/v6 v6.0.0
 	github.com/rakyll/statik v0.1.7
 	github.com/spf13/cast v1.5.1
 	github.com/spf13/cobra v1.7.0
@@ -132,7 +133,7 @@ require (
 	github.com/petermattis/goid v0.0.0-20230317030725-371a4b8eda08 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
-	github.com/prometheus/client_golang v1.14.0 // indirect
+	github.com/prometheus/client_golang v1.15.0 // indirect
 	github.com/prometheus/client_model v0.3.0 // indirect
 	github.com/prometheus/common v0.42.0 // indirect
 	github.com/prometheus/procfs v0.9.0 // indirect
@@ -189,6 +190,8 @@ replace (
 	// Fix upstream GHSA-h395-qcrw-5vmq vulnerability.
 	// TODO Remove it: https://github.com/cosmos/cosmos-sdk/issues/10409
 	github.com/gin-gonic/gin => github.com/gin-gonic/gin v1.9.0
+
+	github.com/notional-labs/composable/v6 => github.com/notional-labs/composable-centauri/v6 v6.2.3-0.20231026101650-23ecff8b2066
 
 	// https://github.com/cosmos/cosmos-sdk/issues/14949
 	// pin the version of goleveldb to v1.0.1-0.20210819022825-2ae1ddf74ef7 required by SDK v47 upgrade guide.
