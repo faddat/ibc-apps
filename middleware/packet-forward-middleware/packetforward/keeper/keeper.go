@@ -7,6 +7,7 @@ import (
 	"strings"
 	"time"
 
+	transfermiddlewaretypes "github.com/ComposableFi/composable-cosmos/v6/x/transfermiddleware/types"
 	"github.com/armon/go-metrics"
 	"github.com/cosmos/ibc-apps/middleware/packet-forward-middleware/v7/packetforward/types"
 
@@ -22,7 +23,6 @@ import (
 
 	"github.com/cometbft/cometbft/libs/log"
 
-	transfermiddlewaretypes "github.com/ComposableFi/composable-cosmos/v6/x/transfermiddleware/types"
 	transfertypes "github.com/cosmos/ibc-go/v7/modules/apps/transfer/types"
 	clienttypes "github.com/cosmos/ibc-go/v7/modules/core/02-client/types"
 	channeltypes "github.com/cosmos/ibc-go/v7/modules/core/04-channel/types"
