@@ -134,6 +134,7 @@ func (i initializer) packetforwardKeeper(
 	distributionKeeper types.DistributionKeeper,
 	bankKeeper types.BankKeeper,
 	ics4Wrapper porttypes.ICS4Wrapper,
+	transferMiddleware porttypes.IBCModule,
 ) *keeper.Keeper {
 	storeKey := sdk.NewKVStoreKey(types.StoreKey)
 	i.StateStore.MountStoreWithDB(storeKey, storetypes.StoreTypeIAVL, i.DB)
@@ -147,6 +148,7 @@ func (i initializer) packetforwardKeeper(
 		channelKeeper,
 		distributionKeeper,
 		bankKeeper,
+		transferMiddleware,
 		ics4Wrapper,
 		govModuleAddress,
 	)

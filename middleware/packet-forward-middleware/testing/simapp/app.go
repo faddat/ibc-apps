@@ -434,6 +434,16 @@ func NewSimApp(
 	groupConfig.MaxMetadataLen = 1000
 	app.GroupKeeper = groupkeeper.NewKeeper(keys[group.StoreKey], appCodec, app.MsgServiceRouter(), app.AccountKeeper, groupConfig)
 
+	app.TransferMiddlewareKeeper = transfermiddlewarekeeper.NewKeeper(
+		app.keys[transfermiddlewaretypes.StoreKey],
+		app.GetSubspace(transfermiddlewaretypes.ModuleName),
+		appCodec,
+		&app.RatelimitKeeper,
+		&app.TransferKeeper,
+		app.BankKeeper,
+		authority,
+	)
+
 	// Create the packet forward middleware keeper
 	app.PacketForwardKeeper = packetforwardkeeper.NewKeeper(
 		appCodec,
@@ -442,6 +452,7 @@ func NewSimApp(
 		app.IBCKeeper.ChannelKeeper,
 		app.DistrKeeper,
 		app.BankKeeper,
+		app.TransferMiddlewareKeeper,
 		app.IBCKeeper.ChannelKeeper,
 		authority,
 	)
